@@ -1,15 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Container, GlobalStyle } from './styles';
+import Main from './pages/Main';
+import GlobalStyle from './styles/global';
 
 const App: React.FC = () => {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
-      <Container>
-        <h1>My Application</h1>
-      </Container>
-    </>
+      <Switch>
+        <Route path="/" component={Main} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
